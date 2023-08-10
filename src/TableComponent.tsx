@@ -1,17 +1,11 @@
-
 import React, { useState } from 'react';
-// import './TableComponent.css';
+import './TableComponent.css';
 
 interface TableColumnProps {
 	data: any;
 	columnKey: string;
 }
 
-const TableColumn: React.FC<TableColumnProps> = ({ data, columnKey }) => {
-	return (
-		<td>{data[columnKey]}</td>
-	);
-};
 
 interface TableComponentProps {
 	data: any[];
@@ -41,11 +35,16 @@ const TableComponent: React.FC<TableComponentProps> = ({ data, columns, sortable
 		}
 		onSelect && onSelect(selectedRows);
 	};
+	const TableColumn: React.FC<TableColumnProps> = ({ data, columnKey }) => {
+		return (
+			<td className={'table-cell'}>{data[columnKey]}</td>
+		);
+	};
 	
 	return (
 		<table className="table-component">
 			<thead>
-			<tr>
+			<tr className="table-header-row"> {/* Apply the header row style */}
 				{columns.map((column) => (
 					<th key={column.key} onClick={() => handleSort(column.key)}>
 						{column.name}
@@ -56,7 +55,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ data, columns, sortable
 			</thead>
 			<tbody>
 			{data.map((row, index) => (
-				<tr key={index} onClick={() => handleSelect(row)}>
+				<tr key={index} className="table-row" onClick={() => handleSelect(row)}> {/* Apply the row style */}
 					{columns.map((column) => (
 						<TableColumn key={column.key} data={row} columnKey={column.key} />
 					))}
