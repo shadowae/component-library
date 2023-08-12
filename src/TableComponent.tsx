@@ -1,29 +1,46 @@
 import React, { useState } from 'react';
 import './TableComponent.css';
+import SortingIcons from "./components/SortingIcons.tsx";
 
 interface TableColumnProps {
 	data: any;
 	columnKey: string;
 }
 
-
 interface TableComponentProps {
 	data: any[];
 	columns: { name: string; key: string }[];
 	sortable: boolean;
 	selectable: 'single' | 'multi';
-	onSort?: (columnKey: string) => void;
+	onSort?: (columnKey: string, sortDirection: string | null) => void;
 	onSelect?: (selectedRows: any[]) => void;
 }
 
 const TableComponent: React.FC<TableComponentProps> = ({ data, columns, sortable, selectable, onSort, onSelect }) => {
 	const [sortedColumn, setSortedColumn] = useState<string | null>(null);
 	const [selectedRows, setSelectedRows] = useState<any[]>([]);
+	const [sortDirection, setSortDirection] = useState<string| null>(null)
+	
+	const getNewDirection = (sortDirection: string | null, isNewColumn: boolean) => {
+		if (isNewColumn) {
+			return 'asc'
+		}
+		switch (sortDirection) {
+			case 'asc':
+				return 'desc'
+			case 'desc':
+				return null;
+			default:
+				return 'asc'
+		}
+	}
 	
 	const handleSort = (columnKey: string) => {
 		if (sortable && onSort) {
+			const getSortDirection = getNewDirection(sortDirection, sortedColumn !== columnKey);
+			setSortDirection(getSortDirection)
 			setSortedColumn(columnKey);
-			onSort(columnKey);
+			onSort(columnKey, getSortDirection);
 		}
 	};
 	
@@ -46,19 +63,21 @@ const TableComponent: React.FC<TableComponentProps> = ({ data, columns, sortable
 			<thead>
 			<tr className="table-header-row"> {/* Apply the header row style */}
 				{columns.map((column) => (
-					<th key={column.key} onClick={() => handleSort(column.key)}>
-						{column.name}
-						{sortable && sortedColumn === column.key && <span>↑</span>}
-					</th>
+				<th key={column.key} onClick={() => handleSort(column.key)}>
+				{column.name}
+				{sortable && sortedColumn === column.key && (
+					<SortingIcons sortDirection={sortDirection} />
+				)}
+				</th>
 				))}
 			</tr>
 			</thead>
 			<tbody>
 			{data.map((row, index) => (
 				<tr key={index} className="table-row" onClick={() => handleSelect(row)}> {/* Apply the row style */}
-					{columns.map((column) => (
-						<TableColumn key={column.key} data={row} columnKey={column.key} />
-					))}
+				{columns.map((column) => (
+					<TableColumn key={column.key} data={row} columnKey={column.key} />
+				))}
 				</tr>
 			))}
 			</tbody>

@@ -25,7 +25,7 @@ export const Example: Story = {
 	args:{
 		data:data,
 		columns:columns,
-		sortable: false,
+		sortable: true,
 		selectable: 'single'
 	},
 	parameters: {
