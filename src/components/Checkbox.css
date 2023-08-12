@@ -1,0 +1,44 @@
+/* Checkbox.css */
+
+.checkbox {
+    position: relative;
+    display: inline-block;
+    width: 32px; /* Adjust the width as needed */
+    height: 32px; /* Adjust the height as needed */
+    background-color: #fff;
+    border: 2px solid #5c50bb;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.checkbox.checked {
+    background-color: #5c50bb;
+}
+
+.tick-icon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tick-icon-container img {
+    width: 80%; /* Adjust the icon size as needed */
+    height: auto;
+}
+
+
+@media (max-width: 768px) {
+    .checkbox {
+        width: 24px;
+        height: 24px;
+    }
+}
