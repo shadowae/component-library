@@ -1,0 +1,57 @@
+.radio-for-table.selected .group {
+    background-color: #5c50bb;
+}
+
+.radio-for-table .ellipse {
+    background-color: #F7F7F7;
+    position: relative;
+}
+
+.radio-for-table.not-selected {
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #a8a8a8;
+}
+
+.radio-for-table {
+    height: 32px;
+    width: 32px;
+}
+
+.radio-for-table.not-selected {
+    border-radius: 16px;
+}
+
+.radio-for-table .group {
+    border-radius: 16px;
+    height: 32px;
+}
+
+.radio-for-table .ellipse {
+    border-radius: 8px;
+    height: 16px;
+    left: 8px;
+    top: 8px;
+    width: 16px;
+}
+
+@media (max-width: 768px) {
+    .radio-for-table {
+        height: 24px;
+        width: 24px;
+    }
+    .radio-for-table.not-selected {
+        border-radius: 12px;
+    }
+    .radio-for-table .group {
+        border-radius: 12px;
+        height: 24px;
+    }
+    .radio-for-table .ellipse {
+        border-radius: 6px;
+        height: 12px;
+        left: 6px;
+        top: 6px;
+        width: 12px;
+    }
+}
