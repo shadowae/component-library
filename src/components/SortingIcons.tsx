@@ -7,7 +7,6 @@ interface SortProps {
 
 const SortingIcons = ({sortDirection}: SortProps) => {
 	const getIcon = () => {
-		console.log(sortDirection)
 		if (sortDirection === 'asc') {
 			return <img src={UpIcon} alt="Up Arrow" />; // Up arrow icon
 		} else if (sortDirection === 'desc') {

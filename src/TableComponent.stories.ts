@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import TableComponent from './TableComponent.tsx';
 
 const meta: Meta<typeof TableComponent> = {
 	component: TableComponent,
-	// tags: ['autodocs']
+	tags: ['autodocs']
 };
 
 export default meta;
@@ -21,12 +20,49 @@ const columns = [
 	{ name: "Name", key: "name" },
 	{ name: "Age", key: "age" },
 ];
-export const Example: Story = {
+
+export const Sorting: Story = {
 	args:{
 		data:data,
 		columns:columns,
 		sortable: true,
-		selectable: 'single'
+		selectable: 'single',
+		onSelect: (row) => console.log(row),
+		onSort: (columnKey, getSortDirection) => console.log(columnKey, " ",getSortDirection)
+		
+	},
+	parameters: {
+		design: {
+			type: 'figma',
+			url: 'https://www.figma.com/file/LRl3kQFCXnmViiKHkfdBwo/Table-Component-1?type=design&node-id=0%3A1&mode=dev',
+		},
+	},
+};
+
+export const Single: Story = {
+	args:{
+		data:data,
+		columns:columns,
+		sortable: false,
+		selectable: 'single',
+		onSelect: (row) => console.log(row)
+		
+	},
+	parameters: {
+		design: {
+			type: 'figma',
+			url: 'https://www.figma.com/file/LRl3kQFCXnmViiKHkfdBwo/Table-Component-1?type=design&node-id=0%3A1&mode=dev',
+		},
+	},
+};
+
+export const Multiple: Story = {
+	args:{
+		data:data,
+		columns:columns,
+		sortable: false,
+		selectable: 'multi',
+		onSelect: (row) => console.log(row)
 	},
 	parameters: {
 		design: {
