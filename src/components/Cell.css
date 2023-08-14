@@ -1,0 +1,154 @@
+.cell {
+    align-items: flex-start;
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.cell .frame {
+    align-items: flex-start;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.cell .radio-for-table {
+    position: relative !important;
+}
+
+.cell .text-wrapper {
+    color: #000000;
+    font-weight: 400;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.cell .div {
+    color: #000000;
+    font-weight: 400;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.cell .rectangle {
+    align-self: stretch;
+    border-radius: 1px;
+    height: 1px;
+    position: relative;
+    width: 100%;
+}
+
+.cell .tick-instance {
+    height: 16px !important;
+    left: 8px !important;
+    position: absolute !important;
+    top: 8px !important;
+    width: 16px !important;
+}
+
+.cell {
+    > .desktop {
+        display: inline-flex;
+        padding: 24px 0px;
+    }
+}
+
+.cell {
+    > .mobile {
+        display: flex;
+        padding: 8px 0px;
+    }
+}
+
+.cell .desktop.on {
+    gap: 24px;
+}
+
+.cell .mobile.on {
+    align-self: stretch;
+    gap: 16px;
+    width: 100%;
+}
+
+.cell .desktop.on {
+    gap: 24px;
+}
+
+.cell .mobile.on {
+    align-self: stretch;
+    gap: 16px;
+    width: 100%;
+}
+
+.cell .default.off.mobile.off {
+    width: 26px;
+}
+
+.cell .default.off.desktop.off {
+    gap: 10px;
+}
+
+.cell .off.off.mobile.bold {
+    width: 28px;
+}
+
+.cell .divider-on {
+    background-color: #e1e1e1;
+}
+
+.cell .frame.mobile .text-wrapper {
+    font-size: 14px;
+    letter-spacing: 0.03px;
+    line-height: 24px;
+}
+
+.cell .frame.bold .text-wrapper {
+    font-family: "Avenir LT Std-85Heavy", Helvetica;
+}
+
+.cell .frame.desktop .text-wrapper {
+    font-size: 20px;
+    line-height: 35px;
+}
+
+.cell .frame.default .text-wrapper {
+    font-family: "Avenir LT Std-45Book", Helvetica;
+}
+
+.cell .frame.desktop.bold .text-wrapper {
+    letter-spacing: 0;
+}
+
+.cell .frame.default.desktop .text-wrapper {
+    letter-spacing: 0.02px;
+}
+
+.cell .frame.mobile .div {
+    font-size: 14px;
+    letter-spacing: 0.03px;
+    line-height: 24px;
+}
+
+.cell .frame.bold .div {
+    font-family: "Avenir LT Std-85Heavy", Helvetica;
+}
+
+.cell .frame.desktop .div {
+    font-size: 20px;
+    line-height: 35px;
+}
+
+.cell .frame.default .div {
+    font-family: "Avenir LT Std-45Book", Helvetica;
+}
+
+.cell .frame.desktop.bold .div {
+    letter-spacing: 0;
+}
+
+.cell .frame.default.desktop .div {
+    letter-spacing: 0.02px;
+}
