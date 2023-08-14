@@ -10,6 +10,7 @@ type Story = StoryObj<typeof Cell>;
 
 export const Example: Story = {
 	args : {
+		textValue:'Test',
 		breakpoint: "desktop",
 		textWeight: 'default',
 		divider: "on",

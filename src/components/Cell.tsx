@@ -3,23 +3,27 @@ import CheckboxForTable from "./CheckboxForTable.tsx";
 import RadioForTable from "./RadioForTable.tsx";
 
 interface CellProps {
+	textValue: string,
 	breakpoint: "desktop" | "mobile",
 	textWeight: "bold" | "default",
 	divider: "off" | "on",
 	radio: "off" | "on",
 	checkbox: "off" | "on",
 	className ?: string,
-	checkboxForTableIcon ?: any
+	checkboxForTableIcon ?: any,
+	state?: "off" | "on"
 }
 
 export const Cell = (props: CellProps) => {
 	const {
+		textValue,
 		breakpoint,
 		textWeight,
 		divider,
 		radio,
 		checkbox,
 		className,
+		state
 	} = props
 	return (
 		<div className={`cell ${className}`}>
@@ -28,19 +32,19 @@ export const Cell = (props: CellProps) => {
 					<RadioForTable
 						breakpoint={breakpoint === "mobile" ? "mobile" : "desktop"}
 						className="radio-for-table"
-						state="on"
+						state={state || 'off'}
 					/>
 				)}
 				
-				{checkbox === "off" && <div className="text-wrapper">Text</div>}
+				{checkbox === "off" && <div className="text-wrapper">{textValue}</div>}
 				
 				{checkbox === "on" && (
 					<>
 						<CheckboxForTable
 							breakpoint={breakpoint === "mobile" ? "mobile" : "desktop"}
-							state="on"
+							state={state || 'off'}
 						/>
-						<div className="div">Text</div>
+						<div className="div">{textValue}</div>
 					</>
 				)}
 			</div>
