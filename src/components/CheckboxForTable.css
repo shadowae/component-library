@@ -1,0 +1,41 @@
+.checkbox-for-table .class {
+    height: 16px !important;
+    left: 8px !important;
+    position: absolute !important;
+    top: 8px !important;
+    width: 16px !important;
+}
+
+.checkbox-for-table .class-2 {
+    height: 12px !important;
+    left: 6px !important;
+    position: absolute !important;
+    top: 6px !important;
+    width: 12px !important;
+    & img {
+        width: 10px;
+    }
+}
+
+.checkbox-for-table.off {
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #a8a8a8;
+}
+
+.checkbox-for-table.on {
+    background-color: #5c50bb;
+    position: relative;
+}
+
+.checkbox-for-table.mobile {
+    border-radius: 4px;
+    height: 24px;
+    width: 24px;
+}
+
+.checkbox-for-table.desktop {
+    border-radius: 8px;
+    height: 32px;
+    width: 32px;
+}
