@@ -1,0 +1,17 @@
+.tick-screen {
+    border: 1px none;
+}
+
+.tick-screen .combined-shape {
+    height: 10px;
+    left: 1px;
+    position: absolute;
+    top: 3px;
+    width: 10px;
+}
+
+.tick-screen.demo {
+    .combined-shape {
+        background-color: #5c50bb;
+    }
+}
