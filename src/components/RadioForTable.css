@@ -1,0 +1,58 @@
+.radio-for-table .group {
+    background-color: #5c50bb;
+}
+
+.radio-for-table .ellipse {
+    background-color: #f7f7f7;
+    position: relative;
+}
+
+.radio-for-table.off {
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #a8a8a8;
+}
+
+.radio-for-table.mobile {
+    height: 24px;
+    width: 24px;
+}
+
+.radio-for-table.desktop {
+    height: 32px;
+    width: 32px;
+}
+
+.radio-for-table.desktop.off {
+    border-radius: 16px;
+}
+
+.radio-for-table.mobile.off {
+    border-radius: 12px;
+}
+
+.radio-for-table.mobile .group {
+    border-radius: 12px;
+    height: 24px;
+}
+
+.radio-for-table.desktop .group {
+    border-radius: 16px;
+    height: 32px;
+}
+
+.radio-for-table.mobile .ellipse {
+    border-radius: 6px;
+    height: 12px;
+    left: 6px;
+    top: 6px;
+    width: 12px;
+}
+
+.radio-for-table.desktop .ellipse {
+    border-radius: 8px;
+    height: 16px;
+    left: 8px;
+    top: 8px;
+    width: 16px;
+}
